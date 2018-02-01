@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: nodejs-rest-http
+  name: nodejs-rest-http-redhat
 spec:
   ports:
     - protocol: TCP

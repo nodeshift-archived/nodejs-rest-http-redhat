@@ -30,7 +30,7 @@ objects:
 - apiVersion: v1
   kind: ImageStream
   metadata:
-    name: nodejs-rest-http
+    name: nodejs-rest-http-redhat
   spec: {}
 - apiVersion: v1
   kind: ImageStream
@@ -45,12 +45,12 @@ objects:
 - apiVersion: v1
   kind: BuildConfig
   metadata:
-    name: nodejs-rest-http
+    name: nodejs-rest-http-redhat
   spec:
     output:
       to:
         kind: ImageStreamTag
-        name: nodejs-rest-http:latest
+        name: nodejs-rest-http-redhat:latest
     postCommit: {}
     resources: {}
     source:
@@ -80,27 +80,27 @@ objects:
   metadata:
     labels:
       expose: "true"
-      project: nodejs-rest-http
+      project: nodejs-rest-http-redhat
       provider: nodeshift
       version: 1.0.0
-    name: nodejs-rest-http
+    name: nodejs-rest-http-redhat
   spec:
     ports:
     - protocol: TCP
       port: 8080
       targetPort: 8080
     selector:
-      project: nodejs-rest-http
+      project: nodejs-rest-http-redhat
       provider: nodeshift
     type: ClusterIP
 - apiVersion: v1
   kind: DeploymentConfig
   metadata:
-    name: nodejs-rest-http
+    name: nodejs-rest-http-redhat
     labels:
-      app: nodejs-rest-http
+      app: nodejs-rest-http-redhat
       provider: nodeshift
-      project: nodejs-rest-http
+      project: nodejs-rest-http-redhat
       version: 1.0.0
   spec:
     template:
@@ -118,8 +118,8 @@ objects:
                 scheme: HTTP
               initialDelaySeconds: 60
               periodSeconds: 30
-            image: 'nodejs-rest-http'
-            name: nodejs-rest-http
+            image: 'nodejs-rest-http-redhat'
+            name: nodejs-rest-http-redhat
             securityContext:
               privileged: false
             ports:
@@ -128,14 +128,14 @@ objects:
                 protocol: TCP
       metadata:
         labels:
-          app: nodejs-rest-http
-          project: nodejs-rest-http
+          app: nodejs-rest-http-redhat
+          project: nodejs-rest-http-redhat
           provider: nodeshift
           version: 1.0.0
     replicas: 1
     selector:
-      app: nodejs-rest-http
-      project: nodejs-rest-http
+      app: nodejs-rest-http-redhat
+      project: nodejs-rest-http-redhat
       provider: nodeshift
     triggers:
       - type: ConfigChange
@@ -143,21 +143,21 @@ objects:
         imageChangeParams:
           automatic: true
           containerNames:
-            - nodejs-rest-http
+            - nodejs-rest-http-redhat
           from:
             kind: ImageStreamTag
-            name: 'nodejs-rest-http:latest'
+            name: 'nodejs-rest-http-redhat:latest'
 - apiVersion: v1
   kind: Route
   metadata:
     labels:
-      project: nodejs-rest-http
+      project: nodejs-rest-http-redhat
       provider: nodeshift
       version: 1.0.0
-    name: nodejs-rest-http
+    name: nodejs-rest-http-redhat
   spec:
     port:
       targetPort: 8080
     to:
       kind: Service
-      name: nodejs-rest-http
+      name: nodejs-rest-http-redhat
