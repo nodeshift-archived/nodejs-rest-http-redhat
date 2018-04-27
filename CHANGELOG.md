@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.2.3"></a>
+## [1.2.3](https://github.com/bucharest-gold/nodejs-rest-http-redhat/compare/v1.2.2...v1.2.3) (2018-04-27)
+
+
+### Bug Fixes
+
+* use the main prop for the application entry point. ([e9dd88d](https://github.com/bucharest-gold/nodejs-rest-http-redhat/commit/e9dd88d)), closes [#issuecomment-382587104](https://github.com/bucharest-gold/nodejs-rest-http-redhat/issues/issuecomment-382587104) [#26](https://github.com/bucharest-gold/nodejs-rest-http-redhat/issues/26)
+
+
+
 <a name="1.2.2"></a>
 ## [1.2.2](https://github.com/bucharest-gold/nodejs-rest-http-redhat/compare/v1.2.1...v1.2.2) (2018-04-16)
 
