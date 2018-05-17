@@ -6,7 +6,7 @@ const rhoaster = require('rhoaster');
 
 const testEnvironment = rhoaster({
   deploymentName: 'nodejs-rest-http-redhat',
-  dockerImage: 'registry.access.redhat.com/rhoar-nodejs/nodejs-8'
+  dockerImage: 'registry.access.redhat.com/rhoar-nodejs/nodejs-10'
 });
 
 testEnvironment.deploy()
