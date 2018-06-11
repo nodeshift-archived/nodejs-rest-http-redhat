@@ -2,11 +2,12 @@ sudo: required
 dist: trusty
 language: node_js
 node_js:
-  - "10"
+  - "8"
 
 before_install:
   - npm install -g npm@5
   - npm install -g greenkeeper-lockfile@1
+install: npm install
 before_script:
   - greenkeeper-lockfile-update
   - sudo mount --make-shared /
