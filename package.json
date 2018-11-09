@@ -37,7 +37,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/nodeshift/nodejs-rest-http-redhat.git"
+    "url": "git://github.com/nodeshift-starters/nodejs-rest-http-redhat.git"
   },
   "files": [
     "package.json",
@@ -48,9 +48,9 @@
     "licenses"
   ],
   "bugs": {
-    "url": "https://github.com/nodeshift/nodejs-rest-http-redhat/issues"
+    "url": "https://github.com/nodeshift-starters/nodejs-rest-http-redhat/issues"
   },
-  "homepage": "https://github.com/nodeshift/nodejs-rest-http-redhat",
+  "homepage": "https://github.com/nodeshift-starters/nodejs-rest-http-redhat",
   "devDependencies": {
     "coveralls": "^3.0.0",
     "js-yaml": "^3.10.0",
