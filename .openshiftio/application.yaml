@@ -33,16 +33,16 @@ objects:
   - apiVersion: image.openshift.io/v1
     kind: ImageStream
     metadata:
-      name: nodejs-rest-http-redhat${SUFFIX_NAME}
+      name: 'nodejs-rest-http-redhat${SUFFIX_NAME}'
       labels:
-        version: ${RELEASE_VERSION}
+        version: 1.2.4
     spec: {}
   - apiVersion: v1
     kind: BuildConfig
     metadata:
-      name: nodejs-rest-http-redhat-s2i${SUFFIX_NAME}
+      name: 'nodejs-rest-http-redhat-s2i${SUFFIX_NAME}'
       labels:
-        version: ${RELEASE_VERSION}
+        version: 1.2.4
     spec:
       output:
         to:
@@ -76,8 +76,8 @@ objects:
         expose: 'true'
         project: nodejs-rest-http-redhat
         provider: nodeshift
-        version: ${RELEASE_VERSION}
-      name: nodejs-rest-http-redhat${SUFFIX_NAME}
+        version: 1.2.4
+      name: 'nodejs-rest-http-redhat${SUFFIX_NAME}'
     spec:
       ports:
         - protocol: TCP
@@ -90,12 +90,12 @@ objects:
   - apiVersion: v1
     kind: DeploymentConfig
     metadata:
-      name: nodejs-rest-http-redhat${SUFFIX_NAME}
+      name: 'nodejs-rest-http-redhat${SUFFIX_NAME}'
       labels:
         app: nodejs-rest-http-redhat
         provider: nodeshift
         project: nodejs-rest-http-redhat
-        version: ${RELEASE_VERSION}
+        version: 1.2.4
     spec:
       template:
         spec:
@@ -112,7 +112,7 @@ objects:
                   scheme: HTTP
                 initialDelaySeconds: 60
                 periodSeconds: 30
-              image: ""
+              image: ''
               name: nodejs-rest-http-redhat
               securityContext:
                 privileged: false
@@ -125,7 +125,7 @@ objects:
             app: nodejs-rest-http-redhat
             project: nodejs-rest-http-redhat
             provider: nodeshift
-            version: ${RELEASE_VERSION}
+            version: 1.2.4
       replicas: 1
       selector:
         app: nodejs-rest-http-redhat
@@ -147,11 +147,11 @@ objects:
       labels:
         project: nodejs-rest-http-redhat
         provider: nodeshift
-        version: ${RELEASE_VERSION}
-      name: nodejs-rest-http-redhat${SUFFIX_NAME}
+        version: 1.2.4
+      name: 'nodejs-rest-http-redhat${SUFFIX_NAME}'
     spec:
       port:
         targetPort: 8080
       to:
         kind: Service
-        name: nodejs-rest-http-redhat${SUFFIX_NAME}
+        name: 'nodejs-rest-http-redhat${SUFFIX_NAME}'
