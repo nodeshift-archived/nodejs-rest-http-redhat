@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.2.5"></a>
+## [1.2.5](https://github.com/nodeshift-starters/nodejs-rest-http-redhat/compare/v1.2.4...v1.2.5) (2018-11-09)
+
+
+### Bug Fixes
+
+* revert application.yaml back to the way it was, wrt the version ([b77d815](https://github.com/nodeshift-starters/nodejs-rest-http-redhat/commit/b77d815))
+
+
+
 <a name="1.2.4"></a>
 ## [1.2.4](https://github.com/nodeshift-starters/nodejs-rest-http-redhat/compare/v1.2.3...v1.2.4) (2018-11-09)
 
