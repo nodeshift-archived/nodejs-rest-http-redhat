@@ -13,7 +13,7 @@ parameters:
   - name: RELEASE_VERSION
     description: The release version number of application
     displayName: Release version
-    value: 1.2.3
+    value: 1.2.4
   - name: SOURCE_REPOSITORY_URL
     description: The source URL for the application
     displayName: Source URL
@@ -35,14 +35,14 @@ objects:
     metadata:
       name: 'nodejs-rest-http-redhat${SUFFIX_NAME}'
       labels:
-        version: 1.2.4
+        version: '${RELEASE_VERSION}'
     spec: {}
   - apiVersion: v1
     kind: BuildConfig
     metadata:
       name: 'nodejs-rest-http-redhat-s2i${SUFFIX_NAME}'
       labels:
-        version: 1.2.4
+        version: '${RELEASE_VERSION}'
     spec:
       output:
         to:
@@ -76,7 +76,7 @@ objects:
         expose: 'true'
         project: nodejs-rest-http-redhat
         provider: nodeshift
-        version: 1.2.4
+        version: '${RELEASE_VERSION}'
       name: 'nodejs-rest-http-redhat${SUFFIX_NAME}'
     spec:
       ports:
@@ -95,7 +95,7 @@ objects:
         app: nodejs-rest-http-redhat
         provider: nodeshift
         project: nodejs-rest-http-redhat
-        version: 1.2.4
+        version: '${RELEASE_VERSION}'
     spec:
       template:
         spec:
@@ -125,7 +125,7 @@ objects:
             app: nodejs-rest-http-redhat
             project: nodejs-rest-http-redhat
             provider: nodeshift
-            version: 1.2.4
+            version: '${RELEASE_VERSION}'
       replicas: 1
       selector:
         app: nodejs-rest-http-redhat
@@ -147,7 +147,7 @@ objects:
       labels:
         project: nodejs-rest-http-redhat
         provider: nodeshift
-        version: 1.2.4
+        version: '${RELEASE_VERSION}'
       name: 'nodejs-rest-http-redhat${SUFFIX_NAME}'
     spec:
       port:
