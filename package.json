@@ -1,6 +1,6 @@
 {
   "name": "nodejs-rest-http-redhat",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "author": "Red Hat, Inc.",
   "license": "Apache-2.0",
   "scripts": {
