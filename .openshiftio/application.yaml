@@ -53,6 +53,7 @@ objects:
       name: 'nodejs-rest-http-redhat-s2i${SUFFIX_NAME}'
       labels:
         version: '${RELEASE_VERSION}'
+        'app.openshift.io/runtime': 'nodejs'
     spec:
       output:
         to:
@@ -87,6 +88,7 @@ objects:
         project: nodejs-rest-http-redhat
         provider: nodeshift
         version: '${RELEASE_VERSION}'
+        'app.openshift.io/runtime': 'nodejs'
       name: 'nodejs-rest-http-redhat${SUFFIX_NAME}'
     spec:
       ports:
@@ -106,6 +108,7 @@ objects:
         provider: nodeshift
         project: nodejs-rest-http-redhat
         version: '${RELEASE_VERSION}'
+        'app.openshift.io/runtime': 'nodejs'
     spec:
       template:
         spec:
@@ -158,6 +161,7 @@ objects:
         project: nodejs-rest-http-redhat
         provider: nodeshift
         version: '${RELEASE_VERSION}'
+        'app.openshift.io/runtime': 'nodejs'
       name: 'nodejs-rest-http-redhat${SUFFIX_NAME}'
     spec:
       port:
